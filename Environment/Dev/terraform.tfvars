@@ -18,12 +18,12 @@ vnet = {
     subnet = {
       subnet1 = {
         name           = "dev-subnet-1"
-        address_prefix = "10.0.1.0/24"
+        address_prefixes = "10.0.1.0/24"
 
       }
       subnet2 = {
         name           = "dev-subnet-2"
-        address_prefix = "10.0.2.0/24"
+        address_prefixes = "10.0.2.0/24"
       }
     }
   }

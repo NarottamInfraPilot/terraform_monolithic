@@ -6,7 +6,7 @@
 #     address_space       = list(string)
 #     subnet = optional(map(object)({
 #       name             = string
-#       address_prefix = string   
+#       address_prefixes = string   
 #     })))
 #   }))
 # }
@@ -18,9 +18,9 @@ variable "vnet" {
     resource_group_name = string
     address_space       = list(string)
 
-    subnet = optional(map(object({
+    subnet = map(object({
       name           = string
-      address_prefix = string
-    })))
+      address_prefixes = string
+    }))
   }))
 }
