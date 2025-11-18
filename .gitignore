@@ -1,6 +1,32 @@
-/.terraform/
+# Terraform
 *.tfstate
 *.tfstate.backup
 .terraform.lock.hcl
-.gitignore
+
+# Ignore any .terraform directory anywhere in the repo (providers/plugins/executables)
+.terraform/
+**/.terraform/
+
+# Provider binaries / plugins (extra safety)
+.terraform/*/providers/
+.terraform/*/plugins/
+
+# Local terraform files
+.terraform.tfstate
+.terraform.tfstate.backup
+override.tf
+override.tf.json
+
+# Sensitive and OS files
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+
+# Binaries / builds
 *.exe
+*.zip
+
+# Editor
+.vscode/
+# end
