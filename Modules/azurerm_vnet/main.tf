@@ -12,7 +12,7 @@ resource "azurerm_virtual_network" "dev-vnet" {
     content {
       name             = subnet.value.name
       
-      address_prefixes = subnet.value.address_prefixes
+      address_prefix = subnet.value.address_prefix
     }
 
   }

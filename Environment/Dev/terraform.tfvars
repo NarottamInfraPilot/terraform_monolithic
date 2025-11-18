@@ -1,4 +1,4 @@
-rg = {
+rg_p = {
   rg1 = {
     name     = "dev-resource-group-1"
     location = "East US"
@@ -23,7 +23,7 @@ vnet = {
       }
       subnet2 = {
         name           = "dev-subnet-2"
-        address_prefixes = "10.0.2.0/24"
+        address_prefix = "10.0.2.0/24"
       }
     }
   }

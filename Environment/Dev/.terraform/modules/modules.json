@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"nic","Source":"../../Modules/azurerm_network_interface","Dir":"../../Modules/azurerm_network_interface"},{"Key":"rg","Source":"../../Modules/azurerm_resource_group","Dir":"../../Modules/azurerm_resource_group"},{"Key":"vnet","Source":"../../Modules/azurerm_vnet","Dir":"../../Modules/azurerm_vnet"}]}

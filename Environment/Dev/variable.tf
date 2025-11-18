@@ -1,7 +1,3 @@
-variable "rg" {
+variable "rg_p" {}
 
-}
-
-variable "vnet" {
-
-}
+variable "vnet" {}
