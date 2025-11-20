@@ -1,0 +1,23 @@
+trigger: none
+pool: humarapool
+variables:
+  workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
+jobs:
+  - job: 
+    steps:
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: $(workingDirectory)
+        backendServiceArm: 'hamara-sc'
+        backendAzureRmStorageAccountName: 'narottamstgacc8210'
+        backendAzureRmContainerName: 'narottamcontainer8210'
+        backendAzureRmKey: 'tfstate'
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        workingDirectory: $(workingDirectory)
+        environmentServiceNameAzureRM: 'hamara-sc'
+    
