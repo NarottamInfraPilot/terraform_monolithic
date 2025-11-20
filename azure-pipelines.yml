@@ -55,7 +55,7 @@ jobs:
 
       inputs:
         provider: 'azurerm'
-        command: 'apply'
+        command: 'destroy'
         workingDirectory: $(workingDirectory)
         environmentServiceNameAzureRM: '20novSC'
     
