@@ -36,7 +36,7 @@ jobs:
         notifyUsers: 'narottamkumarsaw1999@gmail.com'
         approvers: 'narottamkumarsaw1999@gmail.com'
   - job: apply
-    displayName: terraform plan
+    displayName: terraform apply
     dependsOn: [manual_approval]
     steps:
     - task: TerraformTask@5
