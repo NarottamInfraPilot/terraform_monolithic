@@ -3,9 +3,12 @@ pool: humarapool
 variables:
   workingDirectory: '$(System.DefaultWorkingDirectory)/Environment/Dev'
 jobs:
-  - job: 
+
+  - job: terraform_init
+    displayName:  terraform init kar rahe
     steps:
     - task: TerraformTask@5
+      displayName:  terraform init
       inputs:
         provider: 'azurerm'
         command: 'init'
@@ -15,9 +18,44 @@ jobs:
         backendAzureRmContainerName: 'narottamcontainer8210'
         backendAzureRmKey: 'tfstate'
     - task: TerraformTask@5
+      displayName:  terraform plan
       inputs:
         provider: 'azurerm'
         command: 'plan'
+        workingDirectory: $(workingDirectory)
+        environmentServiceNameAzureRM: '20novSC'
+  - job: manual_approval
+    pool: server
+
+    displayName: manual appraval karwa rahe
+    dependsOn: [terraform_init]
+    steps:
+    - task: ManualValidation@1
+      displayName:  manual approval wala task
+      inputs:
+        notifyUsers: 'narottamkumarsaw1999@gmail.com'
+        approvers: 'narottamkumarsaw1999@gmail.com'
+  - job: apply
+    displayName: terraform plan
+    dependsOn: [manual_approval]
+    steps:
+    - task: TerraformTask@5
+      displayName:  terraform init kar rahe
+
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: $(workingDirectory)
+        backendServiceArm: '20novSC'
+        backendAzureRmStorageAccountName: 'narottamstgacc8210'
+        backendAzureRmContainerName: 'narottamcontainer8210'
+        backendAzureRmKey: 'tfstate'
+    - task: TerraformTask@5
+      displayName:  apply karwa rahe
+
+      inputs:
+        provider: 'azurerm'
+        command: 'apply'
         workingDirectory: $(workingDirectory)
         environmentServiceNameAzureRM: '20novSC'
     
