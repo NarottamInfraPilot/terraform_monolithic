@@ -51,11 +51,9 @@ jobs:
         backendAzureRmContainerName: 'narottamcontainer8210'
         backendAzureRmKey: 'tfstate'
     - task: TerraformTask@5
-      displayName:  apply karwa rahe
-
       inputs:
         provider: 'azurerm'
-        command: 'destroy'
         workingDirectory: $(workingDirectory)
+        command: 'destroy'
         environmentServiceNameAzureRM: '20novSC'
     
