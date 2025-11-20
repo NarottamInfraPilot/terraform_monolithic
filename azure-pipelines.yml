@@ -10,7 +10,7 @@ jobs:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: $(workingDirectory)
-        backendServiceArm: 'hamara-sc'
+        backendServiceArm: '20novSC'
         backendAzureRmStorageAccountName: 'narottamstgacc8210'
         backendAzureRmContainerName: 'narottamcontainer8210'
         backendAzureRmKey: 'tfstate'
@@ -19,5 +19,5 @@ jobs:
         provider: 'azurerm'
         command: 'plan'
         workingDirectory: $(workingDirectory)
-        environmentServiceNameAzureRM: 'hamara-sc'
+        environmentServiceNameAzureRM: '20novSC'
     
